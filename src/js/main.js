@@ -11,6 +11,7 @@ function signOut() {
 
 function onSignIn(googleUser) {
   const id_token = googleUser.getAuthResponse().id_token;
+  console.log('masuk k onSignIn') 
   axios({
     method: 'post',
     url: 'http://localhost:3000/auth/googleSign',
@@ -20,7 +21,6 @@ function onSignIn(googleUser) {
   })
     .then(({ data }) => {
       console.log(data)
-      alert(data)
     })
     .catch(err => {
       console.log(err.response)
