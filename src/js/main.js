@@ -1,15 +1,5 @@
-$( document ).ready(() => {
-  console.log('ready')
-})
-
-$(document).ready(function(){
-  checkLogin()
-  pageNavigator()
-
-})
-
-function checkLogin () {
-  if (localStorage.getItem('token')){
+function checkLogin() {
+  if (localStorage.token) {
     pageMain()
     console.log('sudah login')
   } else {
@@ -19,23 +9,18 @@ function checkLogin () {
   console.log('checked')
 }
 
-function pageMain () {
+function pageMain() {
   $("#loginPage").hide()
+  $("#navBar").show()
   $("#mainPage").show()
 }
 
-function pageLanding () {
+function pageLanding() {
   $("#loginPage").show()
+  $("#navBar").hide()
   $("#mainPage").hide()
 }
 
-function pageNavigator () {
-  // Navigator
-  $("#btnHome").click(function(){
-    pageMain()
-  })
-  $("#btnLogin").click(function(){
-    pageLanding()
-  })
-  // end of navigator
-}
+$(document).ready(function () {
+  checkLogin()
+})

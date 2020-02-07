@@ -9,7 +9,7 @@ function signOut() {
 
 function onSignIn(googleUser) {
   const id_token = googleUser.getAuthResponse().id_token;
-  console.log('masuk k onSignIn') 
+  console.log('masuk k onSignIn')
   axios({
     method: 'post',
     url: 'http://localhost:3000/auth/googleSign',
@@ -25,21 +25,4 @@ function onSignIn(googleUser) {
     .catch(err => {
       console.log(err.response)
     })
-}
-
-function onFailure(error) {
-  console.log(error);
-}
-
-function renderButton() {
-  console.log('masuk render button')
-  gapi.signin2.render('my-signin2', {
-    'scope': 'profile email',
-    'width': 220,
-    'height': 40,
-    'longtitle': true,
-    'theme': 'light',
-    'onsuccess': onSignIn,
-    'onfailure': onFailure
-  });
 }
