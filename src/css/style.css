@@ -1,9 +1,24 @@
 body {
-  background-color: aquamarine;
+  background-color: whitesmoke;
 }
 
-#img-table { 
-  width: 50%; 
-  height: 50%; 
-  object-fit: contain; 
+.bk-image {
+  box-shadow: 5px 10px;
+  background-image:url('../img/bg-jumbotron.jpg'); 
+  background-size:cover; 
+  background-blend-mode: normal;
+  height: 100vh;
+}
+
+.sdw-text {
+  text-shadow: 2px 2px white;
+}
+
+nav ol {
+  float: right;
+  margin-top: 5px;
+}
+
+#tableHolidays {
+  margin-top: 15px;
 }

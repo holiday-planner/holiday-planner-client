@@ -1,15 +1,29 @@
+
 $( document ).ready(() => {
+  checkLogin()
   getEvent('2020-02-12')
   getWeather('2020-02-10', 'Jakarta')
   console.log('ready')
 })
 
-function signOut() {
-  var auth2 = gapi.auth2.getAuthInstance();
-  auth2.signOut().then(function () {
-    console.log('User signed out.');
-  });
+function checkLogin() {
+  if (localStorage.token) {
+    pageMain()
+    console.log('sudah login')
+  } else {
+    pageLanding()
+    console.log('belum login')
+  }
+  console.log('checked')
 }
+
+
+function pageMain() {
+  $("#loginPage").hide()
+  $("#navBar").show()
+  $("#mainPage").show()
+}
+
 
 function onSignIn(googleUser) {
   const id_token = googleUser.getAuthResponse().id_token;
@@ -82,3 +96,10 @@ function getWeather(date, address) {
       console.log(err)
     })
 }
+
+function pageLanding() {
+  $("#loginPage").show()
+  $("#navBar").hide()
+  $("#mainPage").hide()
+}
+
