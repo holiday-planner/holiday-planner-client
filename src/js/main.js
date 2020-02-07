@@ -2,27 +2,40 @@ $( document ).ready(() => {
   console.log('ready')
 })
 
-function signOut() {
-  var auth2 = gapi.auth2.getAuthInstance();
-  auth2.signOut().then(function () {
-    console.log('User signed out.');
-  });
+$(document).ready(function(){
+  checkLogin()
+  pageNavigator()
+
+})
+
+function checkLogin () {
+  if (localStorage.getItem('token')){
+    pageMain()
+    console.log('sudah login')
+  } else {
+    pageLanding()
+    console.log('belum login')
+  }
+  console.log('checked')
 }
 
-function onSignIn(googleUser) {
-  const id_token = googleUser.getAuthResponse().id_token;
-  console.log('masuk k onSignIn') 
-  axios({
-    method: 'post',
-    url: 'http://localhost:3000/auth/googleSign',
-    data: {
-      id_token
-    }
+function pageMain () {
+  $("#loginPage").hide()
+  $("#mainPage").show()
+}
+
+function pageLanding () {
+  $("#loginPage").show()
+  $("#mainPage").hide()
+}
+
+function pageNavigator () {
+  // Navigator
+  $("#btnHome").click(function(){
+    pageMain()
   })
-    .then(({ data }) => {
-      console.log(data)
-    })
-    .catch(err => {
-      console.log(err.response)
-    })
+  $("#btnLogin").click(function(){
+    pageLanding()
+  })
+  // end of navigator
 }
