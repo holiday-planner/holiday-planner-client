@@ -1,33 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- meta -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="google-signin-client_id" content="760237378769-chccvo4opgd88os6kvmp6ts4pook4ekp.apps.googleusercontent.com">
+  <meta name="google-signin-client_id"
+    content="760237378769-chccvo4opgd88os6kvmp6ts4pook4ekp.apps.googleusercontent.com">
 
   <!-- link -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
   <title>Holiday Planner</title>
 
 </head>
+
 <body>
-  <div class="container">
+  <!-- <div class="container">
     <div class="loginPage">
       <div class="g-signin2" data-onsuccess="onSignIn"></div>
       <a href="#" onclick="signOut();">Sign out</a>
     </div>
     <div class="mainPage"></div>
+  </div> -->
+
+  <!-- get event page -->
+  <div class="container">
+    <form id="formHolidays">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="monthSelect">Months</label>
+        </div>
+        <select class="custom-select" id="monthSelect">
+          <option value="" selected>Select Month...</option>
+        </select>
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="yearSelect">Years</label>
+        </div>
+        <select class="custom-select" id="yearSelect">
+          <option value="2020" selected>Select Year...</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <!-- table Holiday -->
+    <table class="table" id="tableHolidays">
+      <caption id="captionHolidays"></caption>
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
+      <tbody id="inputHolidays">
+      </tbody>
+    </table>
   </div>
 
   <!-- script -->
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
   <script src="./src/js/main.js"></script>
+  <script src="./src/js/getHolidays.js"></script>
 </body>
+
 </html>
