@@ -1,3 +1,15 @@
 body {
   background-color: aquamarine;
 }
+
+.bk-image {
+  box-shadow: 5px 10px;
+  background-image:url('../img/bg-jumbotron.jpg'); 
+  background-size:cover; 
+  background-blend-mode: normal;
+  height: 100vh;
+}
+
+.sdw-text {
+  text-shadow: 2px 2px white;
+}

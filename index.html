@@ -12,67 +12,93 @@
   <!-- link -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="./src/css/style.css">
   <title>Holiday Planner</title>
 
 </head>
 
 <body>
-  <!-- <div class="container">
-    <div class="loginPage">
-      <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  <div id="loginPage">
+    <div class="jumbotron d-flex align-items-center bk-image">
+      <div class="py-auto container">
+        <h1 class="display-4 sdw-text"><strong>Holiday Planner</strong></h1>
+        <p class="lead sdw-text">We will provide You everything you need for the best holiday experience.</p>
+        <hr class="my-4">
+        <p class="sdw-text">Ready for the best experience holiday? Please login with your Google account below.</p>
+        <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
+        <div id="my-signin2"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="navigator">
+      <div id="btnLogin">Login</div>
+      <div id="btnHome">Home</div>
       <a href="#" onclick="signOut();">Sign out</a>
     </div>
-    <div class="mainPage"></div>
-  </div> -->
+    <div id="mainPage">
+      <!-- get holiday page -->
+      <div class="container">
+        <form id="formHolidays">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="monthSelect">Months</label>
+            </div>
+            <select class="custom-select" id="monthSelect">
+              <option value="" selected>Select Month...</option>
+            </select>
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="yearSelect">Years</label>
+            </div>
+            <select class="custom-select" id="yearSelect">
+              <option value="2020" selected>Select Year...</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <!-- table Holiday -->
+        <table class="table" id="tableHolidays">
+          <caption id="captionHolidays"></caption>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Date</th>
+            </tr>
+          </thead>
+          <tbody id="inputHolidays">
+          </tbody>
+        </table>
 
-  <!-- get event page -->
-  <div class="container">
-    <form id="formHolidays">
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="monthSelect">Months</label>
-        </div>
-        <select class="custom-select" id="monthSelect">
-          <option value="" selected>Select Month...</option>
-        </select>
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="yearSelect">Years</label>
-        </div>
-        <select class="custom-select" id="yearSelect">
-          <option value="2020" selected>Select Year...</option>
-        </select>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ex quas placeat atque libero ipsum maxime veniam
+        fugit, in itaque corrupti quisquam molestias consectetur quia debitis commodi. Modi, ut molestias?
+        Nisi nihil dicta provident, aspernatur inventore atque iure iste autem? Non iste itaque earum. Ut consectetur
+        cumque aliquam sed reiciendis eum eveniet, blanditiis impedit, fuga inventore, sit itaque. Error, consequatur.
+        Molestias ad blanditiis, ex amet vel libero cupiditate ipsa eligendi corporis magni a quam itaque unde eaque qui
+        eos magnam quaerat, atque repellendus eius odit tenetur! Aliquid ullam provident recusandae.
+        Quasi, suscipit nam quae deserunt aut explicabo numquam non veritatis tempore vero et quis blanditiis laborum
+        qui consequuntur nisi a aliquid voluptatem, dolorem enim omnis amet fugit similique adipisci? Suscipit?
+        Voluptatibus excepturi nobis consequuntur labore unde soluta atque, repellendus odio, a facilis, velit deserunt
+        fugiat reiciendis delectus dolor iure quia asperiores! Enim aliquam dolore modi necessitatibus, aut eligendi?
+        Cum, tempore.
+
+
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    <!-- table Holiday -->
-    <table class="table" id="tableHolidays">
-      <caption id="captionHolidays"></caption>
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Description</th>
-          <th scope="col">Date</th>
-        </tr>
-      </thead>
-      <tbody id="inputHolidays">
-      </tbody>
-    </table>
-  </div>
-
-  <!-- script -->
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
-  <script src="./src/js/main.js"></script>
-  <script src="./src/js/getHolidays.js"></script>
+    </div>
+    <!-- script -->
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+      </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"></script>
+    <script src="./src//js/google.js"></script>
+    <script src="./src/js/getHolidays.js"></script>
+    <script src="./src/js/main.js"></script>
 </body>
 
 </html>
