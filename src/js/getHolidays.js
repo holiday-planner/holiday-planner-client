@@ -60,9 +60,15 @@ $("#formHolidays").submit(function (e) {
                 <th scope="row">${i}</th>
                 <td>${holiday.name}</td>
                 <td>${holiday.description}</td>
-                <td>${formatDate(holiday.date.iso)}</td>
+                <td><a href="" id="getWeather${i}" >${formatDate(holiday.date.iso)}</a></td>
             </tr>`)
+                $(`#getWeather${i}`).click((e) => {
+                    e.preventDefault()
+                    getAll(`${formatDate(holiday.date.iso)
+                        }`)
+                })
                 i++
+
             })
         })
         .fail(err => {
